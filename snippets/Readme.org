@@ -1,0 +1,2 @@
+* If you don't know why this directory exits.
+** because the yas package need this dir to start, otherwise it will yell error message in message buffer.
