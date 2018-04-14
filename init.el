@@ -161,7 +161,7 @@ values."
    dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
-   dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Monaco"
@@ -199,7 +199,7 @@ values."
    dotspacemacs-default-layout-name "Omniscience"
    ;; If non nil the default layout name is displayed in the mode-line.
    ;; (default nil)
-   dotspacemacs-display-default-layout t
+   dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
    dotspacemacs-auto-resume-layouts nil
@@ -305,8 +305,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
            ;; state color
            (spacemacs-emacs-face :background "DarkSeaGreen"))
           (spacemacs-dark
+           ;; cursor
+           (cursor :background "DarkGoldenrod2")
            ;; state color
-           (spacemacs-emacs-face :background "Purple1")))
+           (spacemacs-emacs-face :foreground "black" :background "DarkGoldenrod2") ;; Purple1
+           ))
         )
   (setq configuration-layer--elpa-archives
         '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
