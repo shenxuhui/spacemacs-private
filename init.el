@@ -427,18 +427,18 @@ you should place your code here."
   ;;; powerline theme and smart-mode-line setting end
 
   ;;; cscope and ycmd setting begin
-  ;; (setq url-show-status nil)
-  ;; (setq request-message-level -1)
-  ;; (set-variable 'ycmd-extra-conf-whitelist '("/home/sxh/Workspace/c/*"))
-  ;; (add-hook 'c-mode-hook 'ycmd-mode)
-  ;; (add-hook 'js2-mode-hook 'ycmd-mode)
-  ;; (setq company--auto-completion t
-  ;;       company-show-numbers t)
-  ;; (define-key global-map (kbd "C-c y g")  'ycmd-goto)
-  ;; (define-key global-map (kbd "C-c y d")  'ycmd-goto-definition)
-  ;; (define-key global-map (kbd "C-c y l")  'ycmd-load-conf-file)
-  ;; (define-key global-map (kbd "C-c y o")  'ycmd-open)
-  ;; (add-hook 'c-mode-common-hook 'helm-cscope-mode)
+  (setq url-show-status nil)
+  (setq request-message-level -1)
+  (set-variable 'ycmd-extra-conf-whitelist '("/home/sxh/Workspace/*"))
+  (add-hook 'c-mode-hook 'ycmd-mode)
+  (add-hook 'js2-mode-hook 'ycmd-mode)
+  (setq company--auto-completion t
+        company-show-numbers t)
+  (define-key global-map (kbd "C-c y g")  'ycmd-goto)
+  (define-key global-map (kbd "C-c y d")  'ycmd-goto-definition)
+  (define-key global-map (kbd "C-c y l")  'ycmd-load-conf-file)
+  (define-key global-map (kbd "C-c y o")  'ycmd-open)
+  (add-hook 'c-mode-common-hook 'helm-cscope-mode)
   (with-eval-after-load 'cc-mode
     (define-key c-mode-base-map (kbd "C-c g s")  'helm-cscope-find-this-symbol)
     (define-key c-mode-base-map (kbd "C-c g d")  'helm-cscope-find-global-definition)
