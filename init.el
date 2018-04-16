@@ -12,7 +12,7 @@ values."
    ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
    ;; List of additional paths where to look for configuration layers.
-   ;; Paths must have a trailing slash (i.e. `/Users/shenxuhui/.mycontribs/')
+   ;; Paths must have a trailing slash (i.e. `/home/sxh/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
@@ -27,21 +27,13 @@ values."
      theming
      helm
      better-defaults
-     osx
-     fasd
      docker
-     dash
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (shell :variables
             shell-default-height 30
             shell-default-position 'right)
      (spacemacs-layouts :variables layouts-enable-autosave nil
                         layouts-autosave-delay 300)
-     ;; something may be wrong if you use venv-workon, read spacemacs wakatime layer docs.
-     (wakatime :variables
-               wakatime-api-key  "f6ccb73d-5777-4058-a169-155315c31d33"
-               ;; use the actual wakatime path
-               wakatime-cli-path "/usr/local/bin/wakatime")
 
      ;; text editing
      markdown
@@ -59,23 +51,13 @@ values."
                       auto-completion-tab-key-behavior 'complete
                       auto-completion-enable-snippets-in-popup nil)
      (ycmd :variables
-           ycmd-server-command '("python" "/Users/shenxuhui/.bin/ycmd/ycmd")
+           ycmd-server-command '("python" "/home/sxh/.bin/ycmd/ycmd")
            ycmd-force-semantic-completion t)
 
-     ;; web
-     (ruby :variables
-           ruby-enable-enh-ruby-mode t
-           ruby-version-manager 'rvm
-           ruby-test-runner 'rspec)
-     ruby-on-rails
-     html
-     javascript
-     python
-
      ;; orphan languages
-     emacs-lisp
-     (clojure :variables clojure-enable-fancify-symbols t)
      c-c++
+     python
+     emacs-lisp
      shell-scripts
 
      ;; tags
@@ -90,9 +72,6 @@ values."
      github
      (version-control :variables version-control-diff-tool 'git-gutter+
                       version-control-global-margin t)
-
-     ;; personal layer
-     blog
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -164,7 +143,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Monaco"
+   dotspacemacs-default-font '("Source code pro"
                                :size 14
                                :weight normal
                                :width normal
@@ -312,9 +291,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
            ))
         )
   (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+        '(("melpa-cn" . "https://elpa.emacs-china.com/melpa/")
+          ("org-cn"   . "https://elpa.emacs-china.com/org/")
+          ("gnu-cn"   . "https://elpa.emacs-china.com/gnu/")))
   )
 
 (defun dotspacemacs/user-config ()
@@ -382,12 +361,12 @@ you should place your code here."
   (setq org-startup-truncated nil)
   (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9))))
-  (setq org-archive-location "/Users/shenxuhui/Workspace/org/archives/%s_archive::")
-  (setq org-directory "/Users/shenxuhui/Workspace/org")
+  (setq org-archive-location "/home/sxh/Workspace/org/archives/%s_archive::")
+  (setq org-directory "/home/sxh/Workspace/org")
   (setq org-default-notes-file "notes.org") ;; for org capture
-  (setq org-agenda-files (quote ("/Users/shenxuhui/Workspace/org"
-                                 "/Users/shenxuhui/Workspace/org/tech"
-                                 "/Users/shenxuhui/Workspace/org/work")))
+  (setq org-agenda-files (quote ("/home/sxh/Workspace/org"
+                                 "/home/sxh/Workspace/org/tech"
+                                 "/home/sxh/Workspace/org/work")))
   (setq org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
   (setq org-todo-keywords (quote ((sequence "TODO(t)" "CANCELLED(c@/!)" "DONE(d@/!)"))))
   (setq org-todo-keyword-faces
@@ -396,13 +375,13 @@ you should place your code here."
                 ("CANCELLED" :foreground "RoyalBlue" :weight bold)
                 )))
   (setq org-capture-templates
-        (quote (("t" "todo" entry (file "/Users/shenxuhui/Workspace/org/notes.org")
+        (quote (("t" "todo" entry (file "/home/sxh/Workspace/org/notes.org")
                  "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-                ("n" "note" entry (file "/Users/shenxuhui/Workspace/org/notes.org")
+                ("n" "note" entry (file "/home/sxh/Workspace/org/notes.org")
                  "* %? :note:\n%U\n%a\n" :clock-in t :clock-resume t)
-                ("j" "journal" entry (file+datetree "/Users/shenxuhui/Workspace/org/notes.org")
+                ("j" "journal" entry (file+datetree "/home/sxh/Workspace/org/notes.org")
                  "* %?\n%U\n" :clock-in t :clock-resume t)
-                ("p" "phone call" entry (file "/Users/shenxuhui/Workspace/org/notes.org")
+                ("p" "phone call" entry (file "/home/sxh/Workspace/org/notes.org")
                  "* phone %? :phone:\n%U" :clock-in t :clock-resume t)
                 )))
   (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h)))
@@ -448,18 +427,18 @@ you should place your code here."
   ;;; powerline theme and smart-mode-line setting end
 
   ;;; cscope and ycmd setting begin
-  (setq url-show-status nil)
-  (setq request-message-level -1)
-  (set-variable 'ycmd-extra-conf-whitelist '("/Users/shenxuhui/Workspace/c/*"))
-  (add-hook 'c-mode-hook 'ycmd-mode)
-  (add-hook 'js2-mode-hook 'ycmd-mode)
-  (setq company--auto-completion t
-        company-show-numbers t)
-  (define-key global-map (kbd "C-c y g")  'ycmd-goto)
-  (define-key global-map (kbd "C-c y d")  'ycmd-goto-definition)
-  (define-key global-map (kbd "C-c y l")  'ycmd-load-conf-file)
-  (define-key global-map (kbd "C-c y o")  'ycmd-open)
-  (add-hook 'c-mode-common-hook 'helm-cscope-mode)
+  ;; (setq url-show-status nil)
+  ;; (setq request-message-level -1)
+  ;; (set-variable 'ycmd-extra-conf-whitelist '("/home/sxh/Workspace/c/*"))
+  ;; (add-hook 'c-mode-hook 'ycmd-mode)
+  ;; (add-hook 'js2-mode-hook 'ycmd-mode)
+  ;; (setq company--auto-completion t
+  ;;       company-show-numbers t)
+  ;; (define-key global-map (kbd "C-c y g")  'ycmd-goto)
+  ;; (define-key global-map (kbd "C-c y d")  'ycmd-goto-definition)
+  ;; (define-key global-map (kbd "C-c y l")  'ycmd-load-conf-file)
+  ;; (define-key global-map (kbd "C-c y o")  'ycmd-open)
+  ;; (add-hook 'c-mode-common-hook 'helm-cscope-mode)
   (with-eval-after-load 'cc-mode
     (define-key c-mode-base-map (kbd "C-c g s")  'helm-cscope-find-this-symbol)
     (define-key c-mode-base-map (kbd "C-c g d")  'helm-cscope-find-global-definition)
@@ -546,11 +525,24 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (youdao-dictionary chinese-word-at-point yasnippet-snippets yapfify wttrin xterm-color ws-butler winum web-mode web-beautify wakatime-mode volatile-highlights vi-tilde-fringe uuidgen unfill toc-org tagedit symon switch-window string-inflection spaceline-all-the-icons all-the-icons memoize spaceline powerline smeargle slim-mode shell-pop scss-mode sayid sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe reveal-in-osx-finder restart-emacs realgud test-simple loc-changes load-relative rbenv rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails rake popwin pippel pipenv pip-requirements persp-mode pcre2el pbcopy password-generator paradox overseer osx-trash osx-dictionary orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-page git mustache org-mime org-download org-bullets org-brain open-junk-file neotree nameless mwim multi-term move-text mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode skewer-mode live-py-mode linum-relative link-hint less-css-mode launchctl keyfreq js2-refactor js2-mode js-doc insert-shebang indent-guide importmagic epc concurrent impatient-mode simple-httpd ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-cscope xcscope helm-company helm-c-yasnippet helm-ag haml-mode google-translate google-c-style golden-ratio gnuplot gitignore-mode github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gist gh marshal logito pcache ht gh-md ggtags fuzzy flyspell-correct-helm flyspell-correct flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-bashate flycheck flx-ido flx fish-mode fill-column-indicator feature-mode fasd fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit git-commit ghub with-editor evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-cleverparens smartparens evil-args evil-anzu anzu eshell-z eshell-prompt-extras esh-help erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks enh-ruby-mode emmet-mode elisp-slime-nav editorconfig dumb-jump dockerfile-mode docker json-mode tablist magit-popup docker-tramp json-snatcher json-reformat disaster diff-hl dash-at-point cython-mode counsel-projectile projectile counsel swiper ivy company-ycmd ycmd request-deferred let-alist request deferred company-web web-completion-data company-tern dash-functional tern company-statistics company-shell company-rtags rtags company-quickhelp pos-tip company-c-headers company-anaconda company column-enforce-mode coffee-mode clojure-snippets clojure-cheatsheet clj-refactor inflections edn multiple-cursors paredit peg clean-aindent-mode clang-format cider-eval-sexp-fu eval-sexp-fu highlight cider seq spinner queue pkg-info clojure-mode epl chruby centered-cursor-mode bundler inf-ruby browse-at-remote blog-admin names ctable auto-yasnippet yasnippet auto-highlight-symbol auto-dictionary auto-compile packed anaconda-mode pythonic f dash s aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core ac-ispell auto-complete popup which-key use-package org-plus-contrib hydra font-lock+ exec-path-from-shell evil goto-chg undo-tree diminish bind-map bind-key async))))
+    (orgit org-projectile org-category-capture org-present org-brain org-plus-contrib evil-unimpaired f s dash))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cursor ((t (:background "DarkGoldenrod2"))))
+ '(spacemacs-emacs-face ((t (:foreground "black" :background "DarkGoldenrod2")))))
+)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (evil-unimpaired f s dash))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-)
