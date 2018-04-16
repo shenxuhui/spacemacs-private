@@ -311,7 +311,6 @@ you should place your code here."
   (global-set-key (kbd "C-x C-k") 'kill-buffer)
   (global-set-key (kbd "C-c s") 'ace-swap-window)
   (global-set-key (kbd "C-c C-q") 'read-only-mode)
-  (global-set-key (kbd "C-c j") 'fasd-find-file)
   (global-set-key (kbd "C-c e") 'iedit-mode)
   (global-set-key (kbd "C-c w") 'subword-mode)
   (global-set-key (kbd "C-c r") 'rename-buffer)
