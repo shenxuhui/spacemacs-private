@@ -312,9 +312,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
            ))
         )
   (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+        '(("melpa-cn" . "https://elpa.emacs-china.com/melpa/")
+          ("org-cn"   . "https://elpa.emacs-china.com/org/")
+          ("gnu-cn"   . "https://elpa.emacs-china.com/gnu/")))
   )
 
 (defun dotspacemacs/user-config ()
@@ -324,6 +324,8 @@ layers configuration.
   This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;;; quick fix
+  (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline)
   ;;; emacs base setting begin
   (global-unset-key (kbd "C-x m"))
   (global-set-key (kbd "C-SPC") nil)
@@ -450,7 +452,7 @@ you should place your code here."
   ;;; cscope and ycmd setting begin
   (setq url-show-status nil)
   (setq request-message-level -1)
-  (set-variable 'ycmd-extra-conf-whitelist '("/Users/shenxuhui/Workspace/c/*"))
+  (set-variable 'ycmd-extra-conf-whitelist '("/Users/shenxuhui/*"))
   (add-hook 'c-mode-hook 'ycmd-mode)
   (add-hook 'js2-mode-hook 'ycmd-mode)
   (setq company--auto-completion t
