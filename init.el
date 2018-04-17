@@ -464,9 +464,14 @@ you should place your code here."
   (add-hook 'c-mode-common-hook 'helm-cscope-mode)
   (with-eval-after-load 'cc-mode
     (define-key c-mode-base-map (kbd "C-c g s")  'helm-cscope-find-this-symbol)
+    (define-key c-mode-base-map (kbd "C-c g S")  'helm-cscope-find-this-text-string)
     (define-key c-mode-base-map (kbd "C-c g d")  'helm-cscope-find-global-definition)
     (define-key c-mode-base-map (kbd "C-c g C")  'helm-cscope-find-called-function)
-    (define-key c-mode-base-map (kbd "C-c g c")  'helm-cscope-find-calling-this-function))
+    (define-key c-mode-base-map (kbd "C-c g c")  'helm-cscope-find-calling-this-function)
+    (define-key c-mode-base-map (kbd "C-c g =")  'helm-cscope-find-assignments-to-this-symbol)
+    (define-key c-mode-base-map (kbd "C-c g f")  'helm-cscope-find-this-file)
+    (define-key c-mode-base-map (kbd "C-c g F")  'helm-cscope-find-files-including-file)
+    (define-key c-mode-base-map (kbd "C-c g b")  'helm-cscope-pop-mark))
   ;;; cscope and ycmd setting end
 
   ;;; hs function setting begin
