@@ -529,9 +529,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (orgit org-projectile org-category-capture org-present org-brain org-plus-contrib evil-unimpaired f s dash))))
+ '(package-selected-packages (quote (org-brain evil-unimpaired f s dash))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -540,15 +538,3 @@ This function is called at the very end of Spacemacs initialization."
  '(cursor ((t (:background "DarkGoldenrod2"))))
  '(spacemacs-emacs-face ((t (:foreground "black" :background "DarkGoldenrod2")))))
 )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil-unimpaired f s dash))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
