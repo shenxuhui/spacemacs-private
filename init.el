@@ -432,7 +432,7 @@ you should place your code here."
      )
   ;;; powerline theme and smart-mode-line setting end
 
-  ;;; cscope and ycmd setting begin
+  ;;; cscope and ycmd and gtags setting begin
   (setq url-show-status nil)
   (setq request-message-level -1)
   (set-variable 'ycmd-extra-conf-whitelist '("/home/sxh/Workspace/*"))
@@ -455,7 +455,17 @@ you should place your code here."
     (define-key c-mode-base-map (kbd "C-c g f")  'helm-cscope-find-this-file)
     (define-key c-mode-base-map (kbd "C-c g F")  'helm-cscope-find-files-including-file)
     (define-key c-mode-base-map (kbd "C-c g b")  'helm-cscope-pop-mark))
-  ;;; cscope and ycmd setting end
+
+  (define-key global-map (kbd "C-c G s")  'helm-gtags-find-symbol)
+  (define-key global-map (kbd "C-c G d")  'helm-gtags-find-tag)
+  (define-key global-map (kbd "C-c G r")  'helm-gtags-find-rtag)
+  (define-key global-map (kbd "C-c G i")  'helm-gtags-tags-in-this-function)
+  (define-key global-map (kbd "C-c G S")  'helm-gtags-show-stack)
+  (define-key global-map (kbd "C-c G p")  'helm-gtags-previous-history)
+  (define-key global-map (kbd "C-c G n")  'helm-gtags-next-history)
+  (define-key global-map (kbd "C-c G u")  'helm-gtags-update-tags)
+  (define-key global-map (kbd "C-c G C")  'helm-gtags-create-tags)
+  ;;; cscope and ycmd and gtags setting end
 
   ;;; hs function setting begin
   ;; h means hide, s means show
