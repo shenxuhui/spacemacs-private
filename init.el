@@ -342,6 +342,11 @@ you should place your code here."
   (keyfreq-autosave-mode 1)
   ;;; emacs base setting end
 
+  ;;; tramp setting start
+  ;; (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+  (setq explicit-shell-file-name "/bin/zsh") ;; also change local shell
+  ;;; tramp setting end
+
   ;;; zone setting start
   ;; (zone-when-idle 360)
   ;; (defun zone-choose (pgm)
